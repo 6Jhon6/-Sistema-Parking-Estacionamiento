@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        header {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            background: #ecf0f1;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="sidebar">
+            <h1>Los Rosales</h1>
+            <ul>
+                <li><a onclick="showContent('registrar')">Registrar</a></li>
+                <li><a onclick="showContent('lista-general')">Lista General</a></li>
+                <li><a onclick="showContent('cochera')">Cochera</a></li>
+                <li><a onclick="showContent('caja')">Caja</a></li>
+                <li><a onclick="showContent('reportes')">Reportes</a></li>
+                <li><a onclick="showContent('usuarios')">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="resgistrar">
+            <h2>Nuevo Usuario</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Dueño</legend>
+                    <label>DNI/RUC:</label>
+                    <input type="text" placeholder="DNI/RUC">
+                    <label>Nombre/Razón Social:</label>
+                    <input type="text" placeholder="Nombre - Organización">
+                    <label>Apellido:</label>
+                    <input type="text" placeholder="Apellido">
+                    <label>Teléfono:</label>
+                    <input type="text" placeholder="Teléfono">
+                    <label>E-mail:</label>
+                    <input type="email" placeholder="Correo">
+                </fieldset>
+            </form>
+        </section>
+        <section id="lista-general" class="hidden"><h1>Lista General</h1></section>
+        <section id="lavadero" class="hidden"><h1>Lavadero</h1></section>
+        <section id="caja" class="hidden"><h1>Caja</h1></section>
+        <section id="reportes" class="hidden"><h1>Reportes</h1></section>
+        <section id="usuarios" class="hidden"><h1>Usuarios</h1></section>
+        <section id="personales" class="hidden"><h1>Personales</h1></section>
+        <section id="cochera" class="hidden"><h1>Cochera</h1></section>
+    </main>
+    <script>
+        function showContent(section) {
+            document.querySelectorAll('main > section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
