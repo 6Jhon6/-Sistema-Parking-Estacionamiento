@@ -24,22 +24,29 @@
         </nav>
     </header>
     <main>
-        <section id="registrar" class="hidden">
+        <section id="registrar" class="registrar">
             <h2>Nuevo Usuario</h2>
-            <form action="">
-                <fieldset>
-                    <legend>Dueño</legend>
+            <form action="" class="form_Reg">
+                <div class="input-box">
                     <label>DNI/RUC:</label>
                     <input type="text" placeholder="DNI/RUC">
+                </div>
+                <div class="input-box">
                     <label>Nombre/Razón Social:</label>
                     <input type="text" placeholder="Nombre - Organización">
+                </div>
+                <div class="input-box">
                     <label>Apellido:</label>
                     <input type="text" placeholder="Apellido">
+                </div>
+                <div class="input-box">
                     <label>Teléfono:</label>
                     <input type="text" placeholder="Teléfono">
+                </div>
+                <div class="input-box">
                     <label>E-mail:</label>
                     <input type="email" placeholder="Correo">
-                </fieldset>
+                </div>
             </form>
         </section>
 
@@ -92,18 +99,13 @@
     </main>
     <script>
         function showContent(section) {
-            var currentSection = document.getElementById(section);
+            // Ocultar todas las secciones
+            document.querySelectorAll('main > section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
 
-            if (currentSection.classList.contains('hidden')) {
-
-                document.querySelectorAll('main > section').forEach(section => {
-                    section.classList.add('hidden');
-                });
-                currentSection.classList.remove('hidden');
-            } else {
-                
-                currentSection.classList.add('hidden');
-            }
+            // Mostrar solo la sección seleccionada
+            document.getElementById(section).classList.remove('hidden');
         }
     </script>
 </body>

@@ -1,42 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Nunito', sans-serif;
-        }
-        header {
-            display: flex;
-            width: 100%;
-        }
-        .sidebar {
-            width: 250px;
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
-            height: 100vh;
-        }
-        .sidebar h2 {
-            text-align: center;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            padding: 10px;
-        }
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            cursor: pointer;
-        }
-        main {
-            flex-grow: 1;
-            padding: 20px;
-            background: #ecf0f1;
-        }
-        .hidden {
-            display: none;
-        }
+body {
+    display: flex;
+}
+
+header {
+    width: 25%;
+    height: auto;
+}
+
+.sidebar {
+    height: 100vh;
+    width: auto;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+main {
+    height: 100vh;
+    width: 75%;
+    padding: 20px;
+    background: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* -----------Registrar----------------- */
+
+.registrar{
+    border: 1px solid black;
+
+}
+
+.form_Reg{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.form_Reg .input-box{
+    display: flex;
+}
+
+.form_Reg .input-box label{
+    width: 210px;
+}
+
+.form_Reg .input-box input{
+    width: 100%;
+    height: 25px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 15px;
+}
